@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_axx_stock_pallet_log_form" model="ir.ui.view">
+        <field name="name">axx_stock_pallet_log_form</field>
+        <field name="model">axx.stock.pallet.log</field>
+        <field name="arch" type="xml">
+            <form create="0" edit="0" delete="0">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="axx_product_id"/>
+                            <field name="axx_location_id"/>
+                            <field name="axx_location_dest_id"/>
+                        </group>
+                        <group>
+                            <field name="axx_quantity"/>
+                            <field name="axx_user_id"/>
+                            <field name="axx_date_transfer"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_axx_stock_pallet_log_tree" model="ir.ui.view">
+        <field name="name">axx_stock_pallet_log_tree</field>
+        <field name="model">axx.stock.pallet.log</field>
+        <field name="arch" type="xml">
+            <tree string="Pallet Log" create="0" edit="0" delete="0">
+                <field name="name"/>
+                <field name="axx_product_id"/>
+                <field name="axx_location_id"/>
+                <field name="axx_location_dest_id"/>
+                <field name="axx_quantity"/>
+                <field name="axx_date_transfer"/>
+                <field name="axx_user_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_axx_stock_pallet_log" model="ir.actions.act_window">
+        <field name="name">Pallet Log</field>
+        <field name="res_model">axx.stock.pallet.log</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="axx_stock_extensions.view_axx_stock_pallet_log_tree"/>
+        <field name="context">{}</field>
+    </record>
+
+    <menuitem
+            id="menu_axx_stock_pallet_log"
+            name="Pallet Log"
+            parent="stock.menu_warehouse_report"
+            groups="stock.group_stock_user"
+            action="action_axx_stock_pallet_log"
+            sequence="160"/>
+
+</odoo>

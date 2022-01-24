@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_axx_stock_pallet_form" model="ir.ui.view">
+        <field name="name">axx_stock_pallet_form</field>
+        <field name="model">axx.stock.pallet</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="axx_location_id"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_axx_stock_pallet_tree" model="ir.ui.view">
+        <field name="name">axx_stock_pallet_tree</field>
+        <field name="model">axx.stock.pallet</field>
+        <field name="arch" type="xml">
+            <tree string="Pallet">
+                <field name="name"/>
+                <field name="axx_location_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_axx_stock_pallet" model="ir.actions.act_window">
+        <field name="name">Pallet</field>
+        <field name="res_model">axx.stock.pallet</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="axx_stock_extensions.view_axx_stock_pallet_tree"/>
+        <field name="context">{}</field>
+    </record>
+
+    <menuitem
+            id="menu_axx_stock_pallet"
+            name="Pallet"
+            parent="stock.menu_stock_inventory_control"
+            groups="stock.group_stock_user"
+            action="action_axx_stock_pallet"
+            sequence="10"/>
+
+</odoo>

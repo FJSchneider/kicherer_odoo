@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_axx_stock_location_form_inherited" model="ir.ui.view">
+        <field name="name">axx_stock_location_form_inherit</field>
+        <field name="model">stock.location</field>
+        <field name="inherit_id" ref="stock.view_location_form"/>
+        <field name="arch" type="xml">
+            <field name="usage" position="after">
+                <field name="axx_is_goods_receipt_loc"/>
+                <field name="axx_is_production_loc"/>
+<!--                <field name="axx_pallet_count"/>-->
+                <field name="axx_pallet_id"/>
+                <field name="axx_loc_height_count"/>
+            </field>
+        </field>
+    </record>
+
+</odoo>

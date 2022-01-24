@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_axx_store_product_user,access_axx_store_product_user,model_axx_store_product,base.group_user,1,1,1,0
+access_axx_store_product_line_user,access_axx_store_product_line_user,model_axx_store_product_line,base.group_user,1,1,1,0
+access_axx_store_product_manager,access_axx_store_product_manager,model_axx_store_product,stock.group_stock_manager,1,1,1,1
+access_axx_store_product_line_manager,access_axx_store_product_line_manager,model_axx_store_product_line,stock.group_stock_manager,1,1,1,1
+access_stock_quant_user,access_stock_quant_user,stock.model_stock_quant,stock.group_stock_user,1,1,1,0
+access_stock_pallet_user,access_stock_pallet_user,model_axx_stock_pallet,stock.group_stock_user,1,1,1,0
+access_stock_pallet_manager,access_stock_pallet_manager,model_axx_stock_pallet,stock.group_stock_manager,1,1,1,1
+access_stock_pallet_log_user,access_stock_pallet_user,model_axx_stock_pallet_log,stock.group_stock_user,1,1,1,0
